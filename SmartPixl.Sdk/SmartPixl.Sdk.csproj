@@ -19,9 +19,10 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Update="readme.md">
+      <None Remove="readme.md" />
+      <Content Include="readme.md">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
+      </Content>
     </ItemGroup>
 
 </Project>
