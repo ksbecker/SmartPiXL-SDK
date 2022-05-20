@@ -22,10 +22,6 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'build'
-
 - task: Assembly-Info-NetCore@3
   inputs:
     Path: '$(Build.SourcesDirectory)'
@@ -37,9 +33,17 @@ steps:
     PackageId: 'SmartPixl.Sdk'
     Authors: 'Kevin Becker'
     PackageLicenseExpression: 'MIT'
+    VersionNumber: '$(nugVersion)'
+    FileVersionNumber: '$(nugVersion)'
+    InformationalVersion: '$(nugVersion)'
+    PackageVersion: '$(nugVersion)'
     LogLevel: 'verbose'
     FailOnWarning: false
     DisableTelemetry: false
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
 
 - task: NuGetCommand@2
   displayName: 'NuGet push'
