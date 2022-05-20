@@ -1,11 +1,11 @@
 ﻿namespace SmartPixl.Sdk;
 
 /// <remarks/>
-[Serializable()]
+[Serializable]
 [System.ComponentModel.DesignerCategory("code")]
 [System.Xml.Serialization.XmlType(AnonymousType = true)]
 [System.Xml.Serialization.XmlRoot(Namespace = "", IsNullable = false)]
-public partial class SmartPiXLAPIModel
+public class SmartPiXLAPIModel
 {
     /// <remarks/>
     public string Date { get; set; } = default!;
@@ -119,7 +119,7 @@ public partial class SmartPiXLAPIModel
     public string BODY_SUBTYPE { get; set; } = default!;
 
     /// <remarks/>
-    public byte DOORS { get; set; } = default!;
+    public byte DOORS { get; set; }
 
     /// <remarks/>
     public string MSRP { get; set; } = default!;
@@ -131,7 +131,7 @@ public partial class SmartPiXLAPIModel
     public string GROSS_VEHICLE_WEIGHT_RATING { get; set; } = default!;
 
     /// <remarks/>
-    public decimal TMP_TANK1_GAL { get; set; } = default!;
+    public decimal TMP_TANK1_GAL { get; set; }
 
     /// <remarks/>
     public string MAX_PAYLOAD { get; set; } = default!;
@@ -152,10 +152,10 @@ public partial class SmartPiXLAPIModel
     public string DEF_ENGINE_BLOCK { get; set; } = default!;
 
     /// <remarks/>
-    public byte DEF_ENGINE_CYLINDERS { get; set; } = default!;
+    public byte DEF_ENGINE_CYLINDERS { get; set; }
 
     /// <remarks/>
-    public decimal DEF_ENGINE_SIZE { get; set; } = default!;
+    public decimal DEF_ENGINE_SIZE { get; set; }
 
     /// <remarks/>
     public string ENGINE_SIZE_UOM { get; set; } = default!;
@@ -170,7 +170,7 @@ public partial class SmartPiXLAPIModel
     public string DEF_TRANS_TYPE { get; set; } = default!;
 
     /// <remarks/>
-    public byte DEF_TRANS_SPEEDS { get; set; } = default!;
+    public byte DEF_TRANS_SPEEDS { get; set; }
 
     /// <remarks/>
     public string First_Seen { get; set; } = default!;
@@ -253,4 +253,3 @@ public partial class SmartPiXLAPIModel
     /// <remarks/>
     public string ProspectTypeID { get; set; } = default!;
 }
-

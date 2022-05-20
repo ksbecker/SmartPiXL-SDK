@@ -1,10 +1,12 @@
-﻿namespace SmartPixl.Sdk;
+﻿using System.Net.Http.Headers;
 
-internal class SmartPixlClientFactory
+namespace SmartPixl.Sdk;
+
+internal static class SmartPixlClientFactory
 {
     internal static void ConfigureHttpClientCore(HttpClient httpClient)
     {
         httpClient.DefaultRequestHeaders.Accept.Clear();
-        httpClient.DefaultRequestHeaders.Accept.Add(new("application/json"));
+        httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
     }
 }
