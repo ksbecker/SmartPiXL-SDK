@@ -26,15 +26,20 @@ steps:
   inputs:
     command: 'build'
 
-- task: DotNetCoreCLI@2
-  displayName: 'dotnet pack'
+- task: Assembly-Info-NetCore@3
   inputs:
-    command: 'pack'
-    packagesToPack: '**/*.csproj'
-    versioningScheme: 'byEnvVar'
-    majorVersion: 1
-    minorVersion: 0
-    patchVersion: $(Rev:r)
+    Path: '$(Build.SourcesDirectory)'
+    FileNames: '**/*.csproj'
+    InsertAttributes: false
+    FileEncoding: 'auto'
+    WriteBOM: false
+    PackageRequireLicenseAcceptance: 'false'
+    PackageId: 'SmartPixl.Sdk'
+    Authors: 'Kevin Becker'
+    PackageLicenseExpression: 'MIT'
+    LogLevel: 'verbose'
+    FailOnWarning: false
+    DisableTelemetry: false
 
 - task: NuGetCommand@2
   displayName: 'NuGet push'
