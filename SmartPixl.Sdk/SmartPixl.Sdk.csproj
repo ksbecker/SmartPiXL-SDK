@@ -18,12 +18,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="..\azure-pipelines.yml">
-        <Link>azure-pipelines.yml</Link>
-      </Content>
-    </ItemGroup>
-
-    <ItemGroup>
       <None Update="readme.md">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
