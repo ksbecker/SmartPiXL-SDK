@@ -18,8 +18,4 @@
         <PackageReference Include="Refit.Xml" Version="6.3.2" />
     </ItemGroup>
 
-    <ItemGroup>
-      <None Include="readme.md" Pack="true" PackpagePath="\" />
-    </ItemGroup>
-
 </Project>
