@@ -17,4 +17,16 @@
         <PackageReference Include="Refit.Xml" Version="6.3.2" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="..\azure-pipelines.yml">
+        <Link>azure-pipelines.yml</Link>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="readme.md">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>
