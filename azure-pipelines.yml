@@ -28,13 +28,19 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: NuGetAuthenticate@1
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet pack'
   inputs:
-    nuGetServiceConnections: 'Nuget.org'
+    command: 'pack'
+    packagesToPack: '**/*.csproj'
+    versioningScheme: 'byEnvVar'
+    versionEnvVar: 'Version'
 
-- task: NuGetCommand@2
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet push'
   inputs:
-    command: push
-    nuGetFeedType: external
-    versioningScheme: byEnvVar
-    versionEnvVar: $(Version)
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'Nuget.org'
+    
