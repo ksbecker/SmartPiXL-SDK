@@ -9,7 +9,6 @@
         <Authors>Kevin Becker</Authors>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <Version>1.0.0.0</Version>
-        <PackageReadmeFile>readme.md</PackageReadmeFile>
     </PropertyGroup>
 
     <ItemGroup>
