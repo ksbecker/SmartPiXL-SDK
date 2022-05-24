@@ -1,14 +1,23 @@
-﻿namespace SmartPixl.Sdk;
+﻿using System.Globalization;
+using System.Xml.Serialization;
+
+namespace SmartPixl.Sdk;
 
 /// <remarks/>
 [Serializable]
 [System.ComponentModel.DesignerCategory("code")]
-[System.Xml.Serialization.XmlType(AnonymousType = true)]
-[System.Xml.Serialization.XmlRoot(Namespace = "", IsNullable = false)]
+[XmlType(AnonymousType = true)]
+[XmlRoot(Namespace = "", IsNullable = false)]
 public class SmartPiXLAPIModel
 {
-    /// <remarks/>
-    public string Date { get; set; } = default!;
+    [XmlElement(ElementName = "Date")] public string? DateString { get; set; }
+
+    [XmlElement(ElementName = "NotTheDate")]
+    public DateTime Date
+    {
+        get => DateTime.Parse(DateString);
+        set => DateString = value.ToString(CultureInfo.InvariantCulture);
+    }
 
     /// <remarks/>
     public string HTTP_REFERER { get; set; } = default!;
