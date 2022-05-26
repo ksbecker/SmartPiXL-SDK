@@ -9,6 +9,7 @@
         <Authors>Kevin Becker</Authors>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <Version>1.0.0.0</Version>
+        <RepositoryUrl>https://github.com/ksbecker/SmartPiXL-SDK</RepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>
