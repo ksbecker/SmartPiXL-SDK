@@ -29,4 +29,4 @@ jobs:
     - name: Pack
       run: dotnet pack "./SmartPixl.Sdk/SmartPixl.Sdk.csproj" --no-build
     - name: Nuget Push
-      run: dotnet nuget push "./**/*.nupkg" --api-key ${{ secrets.API_KEY }} --source https://nuget.pkg.github.com/ksbecker/index.json
+      run: dotnet nuget push "**/*.nupkg" --api-key ${{ secrets.API_KEY }} --source https://nuget.pkg.github.com/ksbecker/index.json
